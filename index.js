@@ -50,8 +50,7 @@ module.exports = {
 
         var auth = this.authModule(dexter),
             client = Instapaper(auth.consumerKey, auth.consumerSecret, {apiUrl: apiUrl});
-
-
+        
         client.setUserCredentials(auth.user, auth.pass);
 
         client.bookmarks.client.request('/bookmarks/move', util.pickStringInputs(step, pickInputs)).then(function (bookmarks) {
