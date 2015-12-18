@@ -9,7 +9,10 @@ var pickInputs = {
         'folder_id': 'folder_id'
     },
     pickOutputs = {
-        'bookmarks': 'bookmarks'
+        'bookmark_id': 'bookmark_id',
+        'title': 'title',
+        'url': 'url',
+        'description': 'description'
     };
 
 module.exports = {
@@ -50,11 +53,11 @@ module.exports = {
 
         var auth = this.authModule(dexter),
             client = Instapaper(auth.consumerKey, auth.consumerSecret, {apiUrl: apiUrl});
-        
+
         client.setUserCredentials(auth.user, auth.pass);
 
         client.bookmarks.client.request('/bookmarks/move', util.pickStringInputs(step, pickInputs)).then(function (bookmarks) {
-            this.complete(util.pickResult({bookmarks: bookmarks}, pickOutputs));
+            this.complete(util.pickResult(_.isArray(bookmarks)? _.first(bookmarks): bookmarks, pickOutputs));
 
         }.bind(this)).catch(function(err) {
             this.fail(err);
