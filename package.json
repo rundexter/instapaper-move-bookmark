@@ -1,13 +1,17 @@
 {
-  "name": "instapaper-move-bookmark",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "author": "Alexander",
-  "license": "ISC",
-  "private": true,
-  "dependencies": {
-    "instapaper": "^1.0.0",
-    "lodash": "^3.10.1"
-  }
+   "name": "instapaper-move-bookmark",
+   "version": "0.0.1",
+   "description": "Moves the specified bookmark to a user-created folder",
+   "main": "index.js",
+   "author": "Run Dexter, Inc",
+   "license": "MIT",
+   "private": true,
+   "dependencies": {
+      "instapaper": "^1.0.0",
+      "lodash": "^3.10.1"
+   },
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/rundexter/instapaper-move-bookmark"
+   }
 }
